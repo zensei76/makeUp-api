@@ -107,7 +107,7 @@ function keyup(event) {
 
 
 async function getProduct(brand, product) {
-  var url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}&product_type=${product} `;
+  var url = `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}&product_type=${product} `;
   // var url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=covergirl&product_type=lipstick `
   var html = "";
   console.log("Entered getProduct");
