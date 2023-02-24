@@ -56,21 +56,19 @@ function createDiv(tag, attributeName, attributeValue) {
   ele.setAttribute(attributeName, attributeValue);
   return ele;
 }
-//Function to create HTML elements
-function createHTML() {}
 
 
 //Get searched Input for click event----------------------------------------------------------------------------------------------------------------------------------------
 function getInput(event) {
   event.preventDefault(); // to overcome default behaviour
-
+  productList.innerHTML =" ";
   let input = document.getElementById("input-product").value;
   input ? (input = input.split(" ")) : input;
 
   console.log(input);
   let brand;
   let product;
-
+  
   if (input.length) {
     if (input.length == 2) {
       console.log("Got two inputs");
@@ -88,6 +86,7 @@ function getInput(event) {
       getProduct(brand, product);
     }
   } else {
+ 
     console.log("No Input");
   }
   console.log(input.length);
@@ -109,7 +108,8 @@ function keyup(event) {
 async function getProduct(brand, product) {
   var url = `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}&product_type=${product} `;
   // var url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=covergirl&product_type=lipstick `
-  var html = "";
+  var html = " ";
+ 
   console.log("Entered getProduct");
   try {
     let response = await fetch(url);
