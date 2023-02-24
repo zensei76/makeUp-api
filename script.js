@@ -189,13 +189,39 @@ async function getProduct(brand, product) {
         `;
       });
     } else {
-      html = `<div class = "noProducts"> <h3>Sorry, we didn't find any product<h3></div>`;
+      html = `
+      <div class = "noProducts"> 
+        <h3>Sorry, we didn't find any product<h3>
+        <h6> Here are some Product suggestions </h6>
+        </br>
+        <ul>
+            <li>Blush</li>
+            <li>Bronzer</li>
+            <li>Eyebrow</li>
+            <li>Eyeliner</li>
+            <li>Eyeshadow</li>
+            <li>Foundation</li>
+            <li>Lipliner</li>
+            <li>Lipstick</li>
+            <li>Mascara</li>
+
+        </ul>
+      </div>
+        
+      `;
       console.log(html);
     }
   } catch (error) {
     console.log("In Catch block");
     console.log(error);
-    html = `<div class = "noProducts"> <h3>Server Error<h3>Try after some time</div>`;
+    html = `
+    <div class = "noProducts">
+      <h3>Server Error<h3>Try after some time
+    </div>
+    <p>
+        An error occurred in the api server and your page could not be served.
+    </p>
+    `;
   }
   productList.innerHTML = html;
 }
